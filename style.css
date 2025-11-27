@@ -1,11 +1,14 @@
-
 *{
    margin: 0;
    padding: 0;
+   box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden; /* IMPORTANT FIX */
 }
 
 body {
-  background: #030000;
   background: linear-gradient(132deg,rgba(3, 0, 0, 1) 0%, rgba(2, 2, 97, 1) 100%, rgba(2, 159, 220, 1) 100%, rgba(0, 212, 255, 1) 93%);
   color: #ffffff;
 }
@@ -29,6 +32,7 @@ header a{
     display: flex;
     align-items: center;
     justify-content: space-around;
+    width: 100%;
 }
 
 .left-container{
@@ -80,6 +84,7 @@ header a{
     justify-content: center;
     gap: 40px;
     margin-top: 20px;
+    flex-wrap: wrap;
 }
 
 .skill {
@@ -105,6 +110,15 @@ header a{
 }
 
 /* FOOTER */
+.footer{
+    padding: 30px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    background-color: #000000;
+    width: 100%;
+}
+
 .left-footer img{
     width: 80px;
     height: 80px;
@@ -122,40 +136,39 @@ header a{
     padding: 10px;
 }
 
-.footer{
-    padding: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #000000;
-}
-
+/* --------------------------------------- */
+/*           MOBILE RESPONSIVE             */
+/* --------------------------------------- */
 
 @media(max-width: 900px) {
+
+    * {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
 
     .hero-container {
         flex-direction: column;
         text-align: center;
         padding: 20px;
-        width: 100%;            /* FIX */
+        width: 100%;
     }
 
-    .left-container,
-    .right-container {
-        width: 100%;            /* FIX */
-        max-width: 100%;        /* FIX */
-        padding: 20px;          /* FIX */
-        box-sizing: border-box; /* FIX */
+    .left-container {
+        width: 100%;
+        padding: 20px;
     }
 
     .left-container img {
         width: 250px;
         height: 250px;
-        margin: auto;           /* FIX */
+        margin: auto;
     }
 
     .right-container {
-        text-align: center;     /* FIX */
+        width: 100%;
+        padding: 20px;
+        text-align: center;
     }
 
     .about-container,
@@ -165,8 +178,35 @@ header a{
         font-size: 20px;
     }
 
-    .skill-icons {
-        flex-wrap: wrap;
-        gap: 20px;
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .footer > div {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media(max-width: 600px) {
+
+    header{
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .left-container img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .about-container,
+    .skills {
+        padding: 30px;
+        font-size: 18px;
     }
 }
