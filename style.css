@@ -131,32 +131,31 @@ header a{
 }
 
 
-
-/* --------------------------------------- */
-/*           MOBILE RESPONSIVE             */
-/* --------------------------------------- */
-
 @media(max-width: 900px) {
 
     .hero-container {
         flex-direction: column;
         text-align: center;
         padding: 20px;
+        width: 100%;            /* FIX */
     }
 
-    .left-container {
-        width: 100%;
-        padding: 20px;
+    .left-container,
+    .right-container {
+        width: 100%;            /* FIX */
+        max-width: 100%;        /* FIX */
+        padding: 20px;          /* FIX */
+        box-sizing: border-box; /* FIX */
     }
 
     .left-container img {
         width: 250px;
         height: 250px;
+        margin: auto;           /* FIX */
     }
 
     .right-container {
-        width: 90%;
-        padding: 10px;
+        text-align: center;     /* FIX */
     }
 
     .about-container,
@@ -169,32 +168,5 @@ header a{
     .skill-icons {
         flex-wrap: wrap;
         gap: 20px;
-    }
-}
-
-@media(max-width: 600px) {
-
-    header{
-        flex-direction: column;
-        text-align: center;
-        gap: 10px;
-    }
-
-    .footer {
-        flex-direction: column;
-        text-align: center;
-        gap: 20px;
-    }
-
-    .left-footer img {
-        width: 60px;
-        height: 60px;
-        padding: 10px;
-    }
-
-    .about-container,
-    .skills {
-        padding: 30px;
-        font-size: 18px;
     }
 }
